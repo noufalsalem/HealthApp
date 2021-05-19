@@ -12,11 +12,11 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
-
-            //Create connection string for database
+            services.AddScoped<IPhotoService, PhotoService>();
             services.AddDbContext<DataContext>(options => //lamda expression
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection")); //pass a connection string, target default
