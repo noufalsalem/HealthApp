@@ -14,9 +14,11 @@ namespace API.Extensions
         {
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IPhotoService, PhotoService>();
+            services.AddScoped<LogUserActivity>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
-            services.AddScoped<IPhotoService, PhotoService>();
+            
             services.AddDbContext<DataContext>(options => //lamda expression
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection")); //pass a connection string, target default

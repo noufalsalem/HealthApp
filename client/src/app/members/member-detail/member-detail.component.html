@@ -14,16 +14,16 @@
                 </div>
                 <div>
                     <strong>Last Active:: </strong>
-                    <p>{{member.lastActive}}</p>
+                    <p>{{member.lastActive | date}}</p>
                 </div>
                 <div>
                     <strong>Member since: </strong>
-                    <p>{{member.created}}</p>
+                    <p>{{member.created | date: 'longDate'}}</p>
                 </div>
             </div>
             <div class="card-footer">
                 <div class="btn-group d-flex">
-                    <button class="btn btn-primary">Thumbs Up</button>
+                    <button class="btn btn-primary">Follow</button>
                     <button class="btn btn-secondary">Message</button>
                     
                 </div>
@@ -38,6 +38,9 @@
                 <p>{{member.introduction}}</p>
                 <h4>Experienced With</h4>
                 <p>{{member.experiencedWith}}</p>
+            </tab>
+            <tab heading = 'Feed'>
+                <p>Feed will go here</p>
             </tab>
             <tab heading = 'Messages'>
                 <p>Messages will go here</p>

@@ -1,0 +1,22 @@
+#p{
+    font-size: large;
+}
+#C1{
+    font-weight: bold;
+    color: whitesmoke;
+    padding-top: 3%;
+}
+#div-side{
+    
+    height: 600px;
+    width: 17%;
+    margin-left: -119px;
+    margin-top: -10px;
+    background-color: #78C2AD;
+    border-color: black;
+} 
+#topic-link{
+
+    padding: 0px;
+    
+}

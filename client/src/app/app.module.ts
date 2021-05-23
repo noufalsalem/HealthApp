@@ -24,6 +24,9 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { BannerComponent } from './banner/banner/banner.component';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DisplayCardComponent } from './display-card/display-card.component';
+import { PostComponent } from './post/post.component';
+import { DisplayPostComponent } from './display-post/display-post.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     MemberEditComponent,
     BannerComponent,
     PhotoEditorComponent,
-    TextInputComponent
+    TextInputComponent,
+    DisplayCardComponent,
+    PostComponent,
+    DisplayPostComponent
   ],
   imports: [
     BrowserModule,
