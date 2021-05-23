@@ -7,6 +7,7 @@ import { UserParams } from 'src/app/_models/userParams';
 import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
 
+
 @Component({
   selector: 'app-member-list',
   templateUrl: './member-list.component.html',
@@ -18,11 +19,8 @@ export class MemberListComponent implements OnInit {
   userParams: UserParams;
   user: User;
 
-  constructor(private memberService: MembersService, private accountService: AccountService) { 
-    this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
-      this.user = user;
-      this.userParams = new UserParams(); //pass user, but for now giving error ?
-    })
+  constructor(private memberService: MembersService) { 
+    this.userParams = this.memberService.getUserParams();
   }
 
   ngOnInit(): void {
@@ -30,6 +28,7 @@ export class MemberListComponent implements OnInit {
   }
 
   loadMembers() {
+    this.memberService.setUserParams(this.userParams);
     this.memberService.getMembers(this.userParams).subscribe(response => {
       this.members = response.result;
       this.pagination = response.pagination;
@@ -38,6 +37,7 @@ export class MemberListComponent implements OnInit {
 
   pageChanged(event: any) {
     this.userParams.pageNumber = event.page;
+    this.memberService.setUserParams(this.userParams);
     this.loadMembers();
   }
 
