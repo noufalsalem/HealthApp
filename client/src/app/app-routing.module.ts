@@ -5,6 +5,7 @@ import { DisplayPostComponent } from './display-post/display-post.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { FollowingListComponent } from './following-list/following-list.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -30,6 +31,8 @@ const routes: Routes = [
       {path: 'display-post', component: DisplayPostComponent},
       {path: 'post', component: PostComponent},
       {path: 'display-card', component: DisplayCardComponent},
+      {path: 'following-list', component: FollowingListComponent},
+
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

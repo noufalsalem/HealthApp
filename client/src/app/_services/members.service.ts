@@ -49,6 +49,7 @@ export class MembersService {
     }
 
     let params = this.getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
+
     params = params.append('orderBy', userParams.orderBy);
   
     //the mapping in this method is for CACHING
@@ -86,7 +87,17 @@ export class MembersService {
 
   deletePhoto(photoId: number) {
     return this.http.delete(this.baseUrl + 'users/delete-photo/' + photoId);
-    
+  }
+
+  addFollow(username: string) {
+    //'post' always needs to send an empty body at the end, hence {}
+    return this.http.post(this.baseUrl + 'following/' + username, {});
+  }
+
+  getFollowing(predicate: string, pageNumber, pageSize) {
+    let params = this.getPaginationHeaders(pageNumber, pageSize);
+    params = params.append('predicate', predicate);
+    return this.getPaginatedResult<Partial<Member[]>>(this.baseUrl + 'following', params);
   }
 
   private getPaginatedResult<T>(url, params) {

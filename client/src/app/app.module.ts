@@ -27,6 +27,7 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { PostComponent } from './post/post.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
+import { FollowingListComponent } from './following-list/following-list.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DisplayPostComponent } from './display-post/display-post.component';
     TextInputComponent,
     DisplayCardComponent,
     PostComponent,
-    DisplayPostComponent
+    DisplayPostComponent,
+    FollowingListComponent
   ],
   imports: [
     BrowserModule,
