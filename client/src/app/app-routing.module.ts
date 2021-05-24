@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
@@ -13,6 +14,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PostComponent } from './post/post.component';
+import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { MemberDetailedResolver } from './_resolvers/member-detailed.resolver';
@@ -33,6 +35,7 @@ const routes: Routes = [
       {path: 'post', component: PostComponent},
       {path: 'display-card', component: DisplayCardComponent},
       {path: 'following-list', component: FollowingListComponent},
+      {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]
   },
