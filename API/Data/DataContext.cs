@@ -13,6 +13,7 @@ namespace API.Data
 
         public DbSet<AppUser> Users { get; set; } //Users: Database table
         public DbSet<UserFollow> Following { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -28,11 +29,22 @@ namespace API.Data
                 .HasForeignKey(s => s.SourceUserId)
                 .OnDelete(DeleteBehavior.Cascade); //if u delete a user, u delete related entities
 
-                builder.Entity<UserFollow>()
+            builder.Entity<UserFollow>()
                 .HasOne(s => s.FollowedUser)
                 .WithMany(f => f.FollowedByUsers)
                 .HasForeignKey(s => s.FollowedUserId)
                 .OnDelete(DeleteBehavior.Cascade); //if SQL server changed set it to DeleteBehavior.NoAction
+
+            builder.Entity<Message>()
+                .HasOne(u => u.Recipient)
+                .WithMany(m => m.MessagesReceived)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Message>()
+                .HasOne(u => u.Sender)
+                .WithMany(m => m.MessagesSent)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
         
     }

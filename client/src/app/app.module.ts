@@ -28,6 +28,7 @@ import { DisplayCardComponent } from './display-card/display-card.component';
 import { PostComponent } from './post/post.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
 import { FollowingListComponent } from './following-list/following-list.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { FollowingListComponent } from './following-list/following-list.componen
     DisplayCardComponent,
     PostComponent,
     DisplayPostComponent,
-    FollowingListComponent
+    FollowingListComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
