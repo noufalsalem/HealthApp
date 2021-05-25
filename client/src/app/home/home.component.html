@@ -1,5 +1,8 @@
+<div *ngIf="accountService.currentUser$ | async" class="container mt-5">
+    <app-banner></app-banner>
+</div>
 <div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
+    <div *ngIf="!(accountService.currentUser$ | async) && !registerMode" style="text-align: center;">
         <h1>You're not alone!</h1>
         <p class="lead">Share your stories and ask your questions, all you have to do is sign up!</p>
         <div class="text-center"> 

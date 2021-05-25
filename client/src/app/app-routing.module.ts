@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
       {path: 'display-card', component: DisplayCardComponent},
       {path: 'following-list', component: FollowingListComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
+      {path: 'about', component: AboutComponent},
 
     ]
   },
