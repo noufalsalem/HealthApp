@@ -9,6 +9,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 
@@ -26,7 +28,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CarouselModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
@@ -37,7 +41,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PaginationModule,
     ButtonsModule,
     TimeagoModule,
-    ModalModule
+    ModalModule,
+    CarouselModule,
+    AccordionModule
   ]
 })
 export class SharedModule { }

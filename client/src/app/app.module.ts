@@ -21,7 +21,6 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
-import { BannerComponent } from './banner/banner/banner.component';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
@@ -52,7 +51,6 @@ import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.c
     ServerErrorComponent,
     MemberCardComponent,
     MemberEditComponent,
-    BannerComponent,
     PhotoEditorComponent,
     TextInputComponent,
     DisplayCardComponent,
