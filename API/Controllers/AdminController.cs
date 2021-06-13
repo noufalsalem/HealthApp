@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    public class AdminController : BaseApiController
+    //this class is for ADMIN ROLE
+        public class AdminController : BaseApiController
     {
         private readonly UserManager<AppUser> _userManager;
         public AdminController(UserManager<AppUser> userManager)
@@ -17,7 +18,7 @@ namespace API.Controllers
         }
 
         [Authorize(Policy = "RequireAdminRole")]
-        [HttpGet("users-with-roles")]
+        [HttpGet("users-with-roles")] //GET user roles
         public async Task<ActionResult> GetUsersWithRoles()
         {
             var users = await _userManager.Users
@@ -35,7 +36,7 @@ namespace API.Controllers
             return Ok(users);
         }
 
-        [HttpPost("edit-roles/{username}")]
+        [HttpPost("edit-roles/{username}")] //EDIT roles, display roles
         public async Task<ActionResult> EditRoles(string username, [FromQuery] string roles)
         {
             var selectedRoles = roles.Split(",").ToArray();
@@ -59,6 +60,8 @@ namespace API.Controllers
 
         [Authorize(Policy = "ModeratePhotoRole")]
         [HttpGet("photos-to-moderate")]
+        //starting point for photo moderation (only accessible to moderators),
+        // incomplete
         public ActionResult GetPhotosForModeration()
         {
             return Ok("Admins or moderators can see this");

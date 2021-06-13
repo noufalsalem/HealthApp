@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace API.SignalR
 {
-    //presencehub for if user is online
+    //presencehub for if user is ONLINE
     public class PresenceHub : Hub
     {
         private readonly PresenceTracker _tracker;

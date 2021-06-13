@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace API.Services
 {
+    //MUST install cloudinary, note that password file is marked in GIT IGNORE 
     public class PhotoService : IPhotoService
     {
         private readonly Cloudinary _cloudinary;

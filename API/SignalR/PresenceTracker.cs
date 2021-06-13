@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace API.SignalR
 {
+    //tracks where the user is in the pages and their online activity
     public class PresenceTracker
     {
         private static readonly Dictionary<string, List<string>> OnlineUsers = 

@@ -18,7 +18,7 @@ namespace API.Extensions
             services.AddIdentityCore<AppUser>(opt => 
             {
                 //turning only this opt off, but many other opts available we are keeping them
-                opt.Password.RequireNonAlphanumeric = false; 
+                opt.Password.RequireNonAlphanumeric = false;
             })
                 .AddRoles<AppRole>()
                 .AddRoleManager<RoleManager<AppRole>>()

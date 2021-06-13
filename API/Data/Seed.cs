@@ -9,6 +9,7 @@ namespace API.Data
 {
     public class Seed
     {
+        //this is to seed USER DATA and roles
         public static async Task SeedUsers(UserManager<AppUser> userManager, 
             RoleManager<AppRole> roleManager) 
         {
