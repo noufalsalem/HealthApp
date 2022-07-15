@@ -14,3 +14,5 @@ As this was discarded, I would recommend against running the program as it has m
 - Angular and ASP.NET, as this was my first experience with those. 
 - Importance of preparation (software requirements, etc) before development. 
 - Reaching deadlines in time by prioritizing. 
+## Author
+Nouf AlSalem
