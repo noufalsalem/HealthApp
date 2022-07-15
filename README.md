@@ -1,4 +1,4 @@
-# HealthApp (INCOMPLETE)
+# HealthApp 
 
 Forum web application focused on mental health. 
 
